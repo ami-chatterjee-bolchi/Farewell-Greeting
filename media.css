@@ -1,0 +1,620 @@
+/* ═══════════════════════════════════════════════════════════════
+   media.css  —  Responsive styles for Farewell Tribute
+   Breakpoints:
+     xl  : ≤ 1200px  (large laptop)
+     lg  : ≤ 1024px  (tablet landscape / small laptop)
+     md  : ≤  768px  (tablet portrait)
+     sm  : ≤  540px  (large phone)
+     xs  : ≤  380px  (small phone)
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ── LINK THIS FILE in index.html (before </head>) ──────────────
+   <link rel="stylesheet" href="media.css">
+   ─────────────────────────────────────────────────────────────── */
+
+
+/* ════════════════════════════════════════════════
+   XL  ≤ 1200px  —  Large laptops / small desktops
+   ════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+
+  /* Hero: tighten the photo frame so text has breathing room */
+  .hero-photo-frame {
+    width: clamp(180px, 24vw, 300px);
+    height: clamp(240px, 32vw, 390px);
+  }
+
+  /* Stats: keep 4-col but tighter padding */
+  .stat {
+    padding: 2rem 0.6rem;
+  }
+
+  .stat-number {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+}
+
+
+/* ════════════════════════════════════════════════
+   LG  ≤ 1024px  —  Tablets landscape / small laptops
+   ════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* ── NAV ── */
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    padding: 14px 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-brand img {
+    height: 140px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1.name {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+  }
+
+  .hero-photo-frame {
+    width: clamp(160px, 22vw, 270px);
+    height: clamp(220px, 30vw, 350px);
+  }
+
+  /* ── TIMELINE ── */
+  .tl-title {
+    font-size: 1.05rem;
+  }
+
+  .tl-body {
+    font-size: 0.88rem;
+  }
+
+  /* ── STATS ── */
+  #stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3) {
+    border-top: 1px solid rgba(139, 108, 66, .18);
+  }
+
+  .stat:nth-child(4) {
+    border-top: 1px solid rgba(139, 108, 66, .18);
+    border-right: none;
+  }
+
+  /* ── QUOTE BAND ── */
+  .big-quote {
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+  }
+}
+
+
+/* ════════════════════════════════════════════════
+   MD  ≤ 768px  —  Tablets portrait / large phones
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── CUSTOM CURSOR: hidden on touch ── */
+  #cursor {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  /* ── NAV ── */
+  .nav-links {
+    display: none;   /* hidden; hamburger drawer takes over */
+  }
+
+  .nav-ham {
+    display: flex;
+  }
+
+  .nav-brand img {
+    height: 110px;
+  }
+
+  nav {
+    padding: 0 1rem;
+    padding-left: 0.5rem;
+  }
+
+  /* ── HERO: stack into single column ── */
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  /* diagonal bg becomes a gentle top-half tint */
+  #hero::after {
+    background: linear-gradient(160deg, var(--cream) 65%, var(--ink) 65%);
+  }
+
+  .hero-text {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 2rem 1.4rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-quote {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .hero-scroll {
+    justify-content: center;
+  }
+
+  /* Photo: above the text on mobile */
+  .hero-photo-wrap {
+    grid-column: 1;
+    grid-row: 1;
+    padding: calc(var(--nav-h) + 2.5rem) 2rem 1rem;
+    justify-content: center;
+  }
+
+  .hero-photo-frame {
+    width: clamp(160px, 52vw, 240px);
+    height: clamp(210px, 68vw, 320px);
+  }
+
+  /* decorative frame offset reduced for small screens */
+  .hero-photo-frame::before {
+    inset: -8px -8px 8px 8px;
+  }
+
+  .hero-photo-frame::after{
+    right: 14rem;
+    top: 1rem;
+    writing-mode: vertical-lr;
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: .10em;
+    z-index: 5;
+    color: var(--ink);
+  }
+
+  /* hero footer: stack tags */
+  .hero-footer {
+    grid-column: 1;
+    grid-row: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.4rem;
+  }
+
+  .hero-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-year {
+    writing-mode: horizontal-tb;
+    top: auto;
+    bottom: calc(100% - var(--nav-h) - 0.5rem);
+    right: 1rem;
+    font-size: 0.6rem;
+  }
+
+  .click {
+    bottom: auto;
+    top: calc(var(--nav-h) + 0.4rem);
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  /* ── TIMELINE: collapse to single column ── */
+  .timeline-grid {
+    grid-template-columns: 28px 1fr;  /* dot-rail | content */
+    grid-template-rows: auto;
+  }
+
+  /* vertical line hugs the left side */
+  .timeline-grid::before {
+    left: 13px;
+  }
+
+  /* every item, dot, and spacer gets remapped */
+  .tl-item.left,
+  .tl-item.right {
+    grid-column: 2;
+    text-align: left;
+    padding: 0 0.8rem 2rem 1rem;
+  }
+
+  .tl-dot {
+    grid-column: 1;
+    justify-content: center;
+    padding-top: 0.2rem;
+  }
+
+  /* spacers collapse */
+  .tl-spacer {
+    display: none;
+  }
+
+  /* ── QUOTE BAND ── */
+  #quote-band {
+    padding: 3rem 1.4rem;
+  }
+
+  .big-quote {
+    font-size: clamp(1.05rem, 4.5vw, 1.6rem);
+    line-height: 1.55;
+  }
+
+  /* ── STATS: 2×2 ── */
+  #stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* reset borders cleanly for 2-col layout */
+  .stat {
+    border-right: 1px solid rgba(139, 108, 66, .18);
+    border-top: none;
+  }
+
+  .stat:nth-child(even) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-top: 1px solid rgba(139, 108, 66, .18);
+  }
+
+  /* ── LETTER ── */
+  #letter {
+    padding: 3rem 1rem;
+  }
+
+  .letter-paper {
+    padding: 2rem 1.4rem;
+  }
+
+  /* ── FAREWELL SECTION ── */
+  #farewell-section {
+    padding: 60px 20px 80px;
+  }
+
+  .farewell-big {
+    font-size: clamp(2.8rem, 16vw, 6rem);
+  }
+
+  .farewell-final-quote {
+    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .farewell-from {
+    margin-top: 3.5rem;
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .divider-line,
+  .divider-line-2 {
+    width: 40px;
+  }
+}
+
+
+/* ════════════════════════════════════════════════
+   SM  ≤ 540px  —  Large phones (iPhone Pro Max etc.)
+   ════════════════════════════════════════════════ */
+@media (max-width: 540px) {
+
+  :root {
+    --nav-h: 68px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    height: var(--nav-h);
+  }
+
+  .nav-brand img {
+    height: 90px;
+  }
+
+  /* ── HERO ── */
+  .hero-photo-frame {
+    width: clamp(140px, 58vw, 220px);
+    height: clamp(185px, 76vw, 290px);
+  }
+
+  .hero-photo-frame::after{
+    right: 14rem;
+    top: 1rem;
+    writing-mode: vertical-lr;
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: .10em;
+    z-index: 5;
+    color: var(--ink);
+  }
+
+  h1.name {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-quote {
+    font-size: 0.9rem;
+  }
+
+  .hero-footer-tag {
+    font-size: 0.55rem;
+  }
+
+  /* badge: wrap gracefully */
+  .hero-badge {
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-year{
+    top: 5.4rem;
+    right: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(-90deg);
+  }
+
+  /* ── TIMELINE ── */
+  #timeline {
+    padding: 3rem 0.8rem;
+  }
+
+  .tl-title {
+    font-size: 1rem;
+  }
+
+  .tl-body {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  /* ── STATS: stack to 1 column on very narrow ── */
+  #stats {
+    grid-template-columns: 1fr 1fr;  /* keep 2-col — numbers still fit */
+  }
+
+  .stat-number {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .stat-label {
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── QUOTE BAND ── */
+  .big-quote {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+  }
+
+  .quote-attr {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* ── LETTER ── */
+  .letter-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .letter-sig {
+    font-size: 1rem;
+  }
+
+  /* ── FAREWELL ── */
+  .farewell-big {
+    font-size: clamp(2.5rem, 18vw, 5rem);
+  }
+
+  .farewell-sub {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .farewell-final-quote {
+    font-size: 0.95rem;
+  }
+
+  .section-text {
+    font-size: 0.85rem;
+  }
+
+  /* ── DRAWER ── */
+  .nav-drawer a {
+    font-size: 0.72rem;
+  }
+}
+
+
+/* ════════════════════════════════════════════════
+   XS  ≤ 380px  —  Small phones (SE, Galaxy A etc.)
+   ════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+
+  :root {
+    --nav-h: 60px;
+  }
+
+  nav {
+    height: var(--nav-h);
+    padding: 0 0.7rem;
+  }
+
+  .nav-brand img {
+    height: 76px;
+  }
+
+  /* ── HERO ── */
+  .hero-photo-frame {
+    width: clamp(120px, 62vw, 180px);
+    height: clamp(160px, 82vw, 240px);
+  }
+
+  .hero-photo-frame::after{
+    right: 11.5rem;
+    top: 0.8rem;
+    writing-mode: vertical-lr;
+    font-size: .5rem;
+    font-weight: bold;
+    letter-spacing: .10em;
+    color: var(--ink);
+  }
+
+  h1.name {
+    font-size: clamp(2rem, 12vw, 2.6rem);
+  }
+
+  .hero-text {
+    padding: 1.6rem 1rem 1.2rem;
+  }
+
+  /* ── STATS: true 1-col on tiny screens ── */
+  #stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: none;
+    border-top: 1px solid rgba(139, 108, 66, .18);
+  }
+
+  .stat:first-child {
+    border-top: none;
+  }
+
+  /* ── TIMELINE ── */
+  .tl-body {
+    font-size: 0.78rem;
+  }
+
+  /* ── QUOTE BAND ── */
+  .big-quote {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+  }
+
+  /* ── FAREWELL ── */
+  .farewell-big {
+    font-size: clamp(2.2rem, 20vw, 4rem);
+  }
+
+  .farewell-final-quote {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  /* letter */
+  .letter-paper {
+    padding: 1.6rem 1rem;
+  }
+
+  .letter-body {
+    font-size: 0.88rem;
+  }
+}
+
+
+/* ════════════════════════════════════════════════
+   PRINT  —  Clean single-column layout for printing
+   ════════════════════════════════════════════════ */
+@media print {
+  #cursor,
+  #confetti-canvas,
+  nav,
+  .nav-drawer,
+  .hero-scroll,
+  .click,
+  audio {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    cursor: auto;
+  }
+
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 2rem;
+  }
+
+  #hero::after {
+    display: none;
+  }
+
+  .hero-photo-wrap {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  .hero-photo-frame {
+    width: 180px;
+    height: 240px;
+  }
+
+  .hero-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tl-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

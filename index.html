@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farewell Tribute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="farewell.css">
+  <link rel="stylesheet" href="media.css">
+  
+
+</head>
+<body>
+
+<div id="cursor"></div>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- MUSIC -->
+
+  <audio id="music" loop>
+    <source src="woh-din_final.mp3" type="audio/mpeg">
+  </audio>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-brand">
+    <img src="logologo.png" alt="LOGO">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#timeline">Journey</a></li>
+    <li><a href="#letter">Letter</a></li>
+    <li><a href="#farewell-section">Farewell</a></li>
+  </ul>
+  <button class="nav-ham" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <a href="#hero"     onclick="closeDrawer()">Home</a>
+  <a href="#timeline" onclick="closeDrawer()">Journey</a>
+  <a href="#letter"   onclick="closeDrawer()">Letter</a>
+  <a href="#farewell-section"   onclick="closeDrawer()">Farewell</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-badge">CS dept. <span>·</span> Vidyasagar College <span>·</span> Calcutta University</div>
+  <div class="hero-year">2 0 2 5</div>
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">Farewell Tribute To,</p>
+    <h1 class="name">Suvam<br><em>Majumder</em></h1>
+    <p class="hero-quote">
+      "The code of life has no syntax <br> errors —
+        only lessons waiting <br>to be compiled."
+    </p>
+    <div class="hero-scroll"><span class="scroll-line"></span> Scroll to explore</div>
+  </div>
+
+  <div class="click">
+    <p>
+      👆 Click anywhere once
+    </p>
+  </div>
+
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-frame">
+      <div class="hero-photo">
+          <div class="premium-slider">
+            <div class="slide active" style="background-image: url('suvam_2.jpeg');"></div>
+            <div class="slide" style="background-image: url('suvam_1.jpeg');"></div>
+            <div class="slide" style="background-image: url('suvam_3.jpeg');"></div>
+            <div class="slide" style="background-image: url('suvam_4.jpeg');"></div>
+            <div class="slide" style="background-image: url('suvam_5.jpeg');"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="hero-footer">
+    <div class="hero-footer-tag">Department <strong>- Computer Science</strong></div>
+    <div class="hero-footer-tag">Batch <strong>- 2022 – 2025</strong></div>
+    <div class="hero-footer-tag">Institution <strong>- Vidyasagar College</strong></div>
+    <div class="hero-footer-tag">Affiliation <strong>- University of Calcutta</strong></div>
+  </div>
+</section>
+
+<!-- ══ TIMELINE ══ -->
+<section id="timeline">
+  <p class="section-label">The Journey</p>
+  <div class="timeline-grid">
+
+    <div class="tl-item left">
+      <p class="tl-year">2022</p>
+      <h3 class="tl-title">First Day at Vidyasagar College</h3>
+      <p class="tl-body">·Everything initialized.<br>· printf("Hello World... but in real life\n");</p>
+    </div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-spacer"></div>
+
+    <div class="tl-spacer"></div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-item right">
+      <p class="tl-year">2023</p>
+      <h3 class="tl-title">Fresher's Welcome</h3>
+      <p class="tl-body">·Initialization complete:
+        <br>Juniors → Connected to Seniors.
+        <br>//Strangers welcomed… connections established...
+      
+      </p>
+    </div>
+
+    <div class="tl-item left">
+      <p class="tl-year">2023</p>
+      <h3 class="tl-title">Academic Excellence</h3>
+      <p class="tl-body">While (curiosity == true) {<br>
+       knowledge++;&emsp; &emsp; <br>
+        skills++;&emsp; &emsp; <br>
+      }<br>
+      // coding, hardware, software — all successfully integrated.
+      </p>
+    </div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-spacer"></div>
+
+    <div class="tl-spacer"></div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-item right">
+      <p class="tl-year">2023</p>
+      <h3 class="tl-title">College Fest and Bonds</h3>
+      <p class="tl-body">While (fest == ongoing) {
+<br>&emsp; &emsp;fun++;
+<br>&emsp; &emsp;teamwork++;
+<br>&emsp; &emsp;friendships = permanent;
+<br> }</p>
+    </div>
+
+    <div class="tl-item left">
+      <p class="tl-year">2024</p>
+      <h3 class="tl-title">Final Year Begins</h3>
+      <p class="tl-body">// Final Year Loaded:
+        <br>Experience++; 
+        <br>Responsibility++;
+        <br>Time--;
+        <br>// Three years compiled into memories,<br>
+ now executing the final phase.
+      </p>
+    </div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-spacer"></div>
+
+    <div class="tl-spacer"></div>
+    <div class="tl-dot"><div class="dot"></div></div>
+    <div class="tl-item right">
+      <p class="tl-year">2025</p>
+      <h3 class="tl-title">Graduate in 2025</h3>
+      <p class="tl-body">if (year == 2025) {
+<br>&emsp; &emsp;degree = "B.Sc";
+<br>&emsp; &emsp;status = "Graduate";
+<br>&emsp; &emsp;future = infinitePossibilities;
+<br>}</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ QUOTE BAND ══ -->
+<div id="quote-band">
+  <p class="big-quote">
+    while (missYou) {<br>
+        &emsp; printf("You may be leaving this chapter of college life,\n");<br>
+        &emsp; printf("but your impact is permanently stored in our system.");<br>
+    } 
+    <br><br><span>" Error 404: Another senior like you not found."</span>
+  </p>
+  <p class="quote-attr">— Farewell, Batch 2022-20025 · Vidyasagar College —</p>
+</div>
+
+<!-- ══ STATS ══ -->
+<div id="stats">
+  <div class="stat">
+    <span class="stat-number" data-target="3">0</span>
+    <span class="stat-label">Years of Learning</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number" data-target="6">0</span>
+    <span class="stat-label">Semesters Conquered</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number" data-target="15000">0</span>
+    <span class="stat-label">Hours Studied</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number" data-special>∞</span>
+    <span class="stat-label">Memories Made</span>
+  </div>
+</div>
+
+<!-- ══ LETTER ══ -->
+<section id="letter">
+  <p class="section-label">A Farewell Letter</p>
+  <div class="letter-paper">
+    <p class="letter-date">June 2026 &nbsp;·&nbsp; Kolkata</p>
+    <div class="letter-body">
+      <p>Dear Suvam Da,</p>
+      <p>Three years ago, you stepped into the corridors of Vidyasagar College — perhaps a little uncertain, perhaps a little wide-eyed, but always carrying that quiet fire within you. Today, as we gather to bid you farewell, those same corridors feel a little emptier, and a little more full of your legacy.</p>
+      <p>You have laughed in these classrooms, debated in these hallways, dreamed under these skies. You have turned pages of textbooks and pages of your own story, and somehow made both magnificent. Vidyasagar — the ocean of knowledge — would be proud.</p>
+      <p>The University of Calcutta has given you its credential, but you have given it something in return: proof that its students carry the torch of curiosity, integrity, and heart.</p>
+      <p>Whatever road you choose from here — know that every lesson learned, every friendship forged, every late night endured, was building the person you are today. And that person is extraordinary.</p>
+      <p>Go well. Go far. And come back and visit us sometime.</p>
+      <p>System.out.println("You will always be missed ❤️");</p>
+    </div>
+    <div class="letter-sig">With pride and love,<br>From Juniors</div>
+  </div>
+</section>
+
+<section id="farewell-section">
+
+  <div class="section-text reveal">
+    <div class="divider-line"></div>
+    <div class="text">From Us to You</div>
+    <div class="divider-line-2"></div>
+  </div>
+
+  <div class="farewell-big reveal">Au Revoir</div>
+  <div class="farewell-sub reveal">Until We Meet Again</div>
+
+  <p class="farewell-final-quote reveal">
+    You weren’t just a senior, you were a whole library of guidance.
+    Every time we were stuck, you were our import solution.<br>
+    Now as you move to a next version of life,<br>
+    just remember -
+<br><strong>" Your legacy is successfully deployed in our hearts."</strong>
+  </p>
+
+  <div class="farewell-from reveal">· With love &amp; pride, the Junior Batch · </div>
+</section>
+
+
+<script src="farewell.js"></script>
+</body>
+</html>
