@@ -195,7 +195,7 @@ https://ami-chatterjee-bolchi.github.io/Farewell-Greeting/
 
 ## 📄 License
 
-This project is available under the **MIT License**.
+This project is available under the **MIT License**
 
 ---
 
